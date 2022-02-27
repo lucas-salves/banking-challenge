@@ -32,10 +32,14 @@ public class AMQPPublisher {
 
     public void sendToQueue(String queue, String message) throws IOException {
         if (connection == null || channel == null) {
-
+            connection = AMQPConfig.getConnection();
+            channel = connection.createChannel();
         }
 
+        //queue, durable, exclusive, autoDelete, properties
         channel.queueDeclare(queue, true, false, false, null);
+
+        channel.basicPublish("", queue, null, message.getBytes("UTF-8"));
     }
 
     public void close() {
