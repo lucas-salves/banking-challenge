@@ -14,11 +14,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
  * @author lucas
  */
+@RestController
 public class PushController {
 
     private Gson gson = new Gson();
@@ -49,7 +51,7 @@ public class PushController {
         publisher.close();
 
     }
-
+    
     private void sendInvoiceAction(String json, AMQPPublisher publisher) {
         try {
             publisher.sendToQueue("invoiced_payment", json);
