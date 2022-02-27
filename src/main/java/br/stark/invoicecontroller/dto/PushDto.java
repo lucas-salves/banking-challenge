@@ -23,7 +23,7 @@ public class PushDto {
     public class Event {
         
         @SerializedName("subscription")
-        private String eventCode;
+        private String eventAction;
         
         @SerializedName("workspaceId")
         private String workspaceId;
