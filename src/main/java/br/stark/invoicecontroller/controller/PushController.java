@@ -52,7 +52,7 @@ public class PushController {
 
     private void sendInvoiceAction(String json, AMQPPublisher publisher) {
         try {
-            publisher.sendToQueue("configurar_fila", json);
+            publisher.sendToQueue("invoiced_payment", json);
         } catch (IOException ex) {
             Logger.getLogger(PushController.class.getName()).log(Level.SEVERE, null, ex);
         }
