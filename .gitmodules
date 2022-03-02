@@ -1,6 +1,3 @@
-[submodule "banking-challenge-invoice-consumer"]
-	path = banking-challenge-invoice-consumer
-	url = https://github.com/lucas-salves/banking-challenge-invoice-consumer.git
 [submodule "credited-consumer"]
 	path = credited-consumer
 	url = https://github.com/lucas-salves/credited-consumer.git
